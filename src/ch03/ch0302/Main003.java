@@ -3,7 +3,6 @@ package ch03.ch0302;
 import java.util.Scanner;
 
 // 백준 11659
-// TODO BufferedReader, InputStreamReader, StringTokenizer 사용하는 방법
 public class Main003 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
