@@ -29,8 +29,14 @@ public class Main008 {
                 } else if (A[start] + A[end] < A[i]) {
                     start++;
                 } else {
-                    answer++;
-                    break;
+                    if (start == i) {
+                        start++;
+                    } else if (end == i) {
+                        end--;
+                    } else {
+                        answer++;
+                        break;
+                    }
                 }
             }
         }
