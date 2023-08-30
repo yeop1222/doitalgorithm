@@ -18,5 +18,5 @@ public class Main003 {
         for(int i=0; i<M; i++) {
             System.out.println(-partialSum[scanner.nextInt() - 1] + partialSum[scanner.nextInt()]);
         }
-    }//커밋테스트
+    }
 }
