@@ -1,9 +1,8 @@
-package ch04.ch0403;
+package ch04.ch0404;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main019 {
@@ -19,8 +18,7 @@ public class Main019 {
             A[i] = Integer.parseInt(st.nextToken());
         }
 
-//        quickSort(A, 0, N-1, K-1);
-        Arrays.sort(A);
+        quickSort(A, 0, N-1, K-1);
         System.out.println(A[K-1]);
     }
 
@@ -44,21 +42,30 @@ public class Main019 {
             }
             return end;
         }
-
         int M = (start+end) / 2;
         swap(A, start, M);
         int pivot = A[start];
 
-        int i = start;
-        for (int j = start + 1; j <= end; j++) {
-            if(A[j] < pivot) {
+        int i = start + 1;
+        int j = end;
+        while(i <= j) {
+            while(A[i] < pivot && i < j) {
                 i++;
+            }
+            while(A[j] > pivot && i < j) {
+                j--;
+            }
+            if(i <= j) {
                 swap(A, i, j);
+                i++;
+                j--;
             }
         }
 
-        swap(A, start, i);
-        return i;
+        A[start] = A[j];
+        A[j] = pivot;
+        return j;
+
     }
 
     public static void swap(int[] A, int i, int j) {
